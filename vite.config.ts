@@ -6,14 +6,18 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [
         laravel({
-            input: ["resources/css/app.css", "resources/js/app.ts"],
+            input: ["resources/js/app.ts"],
             refresh: true,
         }),
         react(),
     ],
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "./resources/js"),
+            "@app": path.resolve(__dirname, "./resources/js"),
+            "@style-system": path.resolve(
+                __dirname,
+                "./resources/styled-system",
+            ),
         },
     },
 });
