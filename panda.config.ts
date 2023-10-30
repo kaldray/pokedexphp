@@ -12,6 +12,11 @@ export default defineConfig({
 
     // Useful for theme customization
     theme: {
+        tokens: {
+            colors: {
+                primary: { value: "hsl(0, 97% ,55%)" },
+            },
+        },
         extend: {},
     },
 
