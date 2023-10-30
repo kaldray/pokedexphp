@@ -3,5 +3,7 @@
     "jsxSingleQuote": false,
     "semi": true,
     "bracketSameLine": true,
+    "arrowParens": "always",
+    "bracketSpacing": true,
     "plugins": ["@prettier/plugin-php"]
 }
