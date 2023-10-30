@@ -16,21 +16,28 @@ type HomeProps = {
 
 const Home = ({ pokemons: { data } }: HomeProps) => {
     return (
-        <section
-            className={css({
-                display: "grid",
-                mt: "5",
-                gap: "1rem",
-                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 3fr))",
-                gridTemplateRows: "auto",
-                placeContent: "center",
-                maxW: "90%",
-                mx: "auto",
-            })}>
-            {data.map((d) => (
-                <PokemonCard key={d.name} {...d} />
-            ))}
-        </section>
+        <>
+            <section
+                className={css({
+                    mt: "5",
+                    maxW: "90%",
+                    mx: "auto",
+                })}>
+                <div
+                    className={css({
+                        display: "grid",
+                        gap: "1rem",
+                        gridTemplateColumns:
+                            "repeat(auto-fit, minmax(250px, 3fr))",
+                        gridTemplateRows: "auto",
+                        placeContent: "center",
+                    })}>
+                    {data.map((d) => (
+                        <PokemonCard key={d.name} {...d} />
+                    ))}
+                </div>
+            </section>
+        </>
     );
 };
 

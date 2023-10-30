@@ -1,12 +1,7 @@
-import { type PropsWithChildren } from "react";
-import type { Pokemon } from "@app/types";
 import { css } from "@style-system/css";
+import type { Pokemon } from "@app/types";
 
-export const PokemonCard = ({
-    pokedex_id,
-    name,
-    children,
-}: Pokemon & PropsWithChildren) => {
+export const PokemonCard = ({ pokedex_id, name }: Pokemon) => {
     const getPokemonSprites = ({
         pokedex_id,
         name,
