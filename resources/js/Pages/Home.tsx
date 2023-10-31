@@ -3,9 +3,10 @@ import react from "react";
 import Layout from "@app/Pages/Layout";
 import { PokemonCard } from "@app/components/PokemonCard";
 import { css } from "@style-system/css";
+import { Paginate } from "@app/components/Pagination";
+import { Search } from "@app/components/Search";
 
 import type { Meta, Pagination, Pokemon } from "@app/types";
-import { Paginate } from "@app/components/Pagination";
 
 type HomeProps = {
     pokemons: {
@@ -24,10 +25,11 @@ const Home = ({ pokemons: { data, links } }: HomeProps) => {
                     maxW: "90%",
                     mx: "auto",
                 })}>
+                <Search />
                 <div
                     className={css({
                         display: "grid",
-                        gap: "1rem",
+                        gap: "3rem",
                         gridTemplateColumns:
                             "repeat(auto-fit, minmax(250px, 3fr))",
                         gridTemplateRows: "auto",

@@ -16,4 +16,11 @@ class PokemonService
     {
         return PokemonResource::collection($this->pokemon::simplePaginate(20));
     }
+
+    public function searchPokemon(string $name): AnonymousResourceCollection
+    {
+        return PokemonResource::collection(
+            $this->pokemon->getPokemonByName($name)->simplePaginate(20)
+        );
+    }
 }

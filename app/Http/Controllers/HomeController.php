@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\PokemonService;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -14,6 +15,15 @@ class HomeController extends Controller
     public function index()
     {
         $pokemonList = $this->pokemonService->getPaginatedPokemon();
+        return Inertia::render("Home", [
+            "pokemons" => $pokemonList,
+        ]);
+    }
+
+    public function show(Request $request)
+    {
+        $name = $request->query->get("name");
+        $pokemonList = $this->pokemonService->searchPokemon($name);
         return Inertia::render("Home", [
             "pokemons" => $pokemonList,
         ]);
