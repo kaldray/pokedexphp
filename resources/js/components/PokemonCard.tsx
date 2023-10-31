@@ -9,19 +9,13 @@ export const PokemonCard = ({ pokedex_id, name }: Pokemon) => {
         pokedex_id: string;
         name: string;
     }): string => {
-        if (
-            name.toLowerCase().includes("mega") &&
-            name.toLowerCase().includes("x")
-        ) {
+        if (name.includes("Mega") && name.endsWith("X")) {
             return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokedex_id}-mega-x.png`;
         }
-        if (
-            name.toLowerCase().includes("mega") &&
-            name.toLowerCase().includes("y")
-        ) {
+        if (name.includes("Mega") && name.endsWith("Y")) {
             return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokedex_id}-mega-y.png`;
         }
-        if (name.toLowerCase().includes("mega")) {
+        if (name.includes("Mega") && !name.startsWith("Mega")) {
             return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokedex_id}-mega.png`;
         }
         return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokedex_id}.png`;
