@@ -29,6 +29,17 @@ export const PokemonCard = ({ pokedex_id, name }: Pokemon) => {
                     justifyContent: "center",
                     alignItems: "center",
                     flexDir: "column",
+                    transition: "all .1s linear",
+                    _hover: {
+                        transform: "scale(1.4)",
+                        transition: "all .1s linear",
+                    },
+                    _motionReduce: {
+                        _hover: {
+                            transition: "none",
+                            transform: "scale(1)",
+                        },
+                    },
                 })}>
                 <div>
                     <img

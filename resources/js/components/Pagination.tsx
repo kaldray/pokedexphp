@@ -47,7 +47,8 @@ export const Paginate = ({ next, prev }: Pagination) => {
                         },
                     })}
                     href={prev ?? ""}
-                    disabled={prev === null}>
+                    disabled={!Boolean(prev)}
+                    aria-disabled={!Boolean(prev)}>
                     Previous
                 </Link>
                 <Link
@@ -73,8 +74,8 @@ export const Paginate = ({ next, prev }: Pagination) => {
                         },
                     })}
                     href={next ?? ""}
-                    disabled={next === null}
-                    aria-disabled={next === null}>
+                    disabled={!Boolean(next)}
+                    aria-disabled={!Boolean(next)}>
                     Next
                 </Link>
             </div>
