@@ -15,6 +15,7 @@ export default defineConfig({
         tokens: {
             colors: {
                 primary: { value: "hsl(0, 97% ,55%)" },
+                secondary: { value: "hsl(0, 0%, 87%)" },
             },
         },
         extend: {},

@@ -5,6 +5,7 @@ import { PokemonCard } from "@app/components/PokemonCard";
 import { css } from "@style-system/css";
 
 import type { Meta, Pagination, Pokemon } from "@app/types";
+import { Paginate } from "@app/components/Pagination";
 
 type HomeProps = {
     pokemons: {
@@ -14,12 +15,12 @@ type HomeProps = {
     };
 };
 
-const Home = ({ pokemons: { data } }: HomeProps) => {
+const Home = ({ pokemons: { data, links } }: HomeProps) => {
     return (
         <>
             <section
                 className={css({
-                    mt: "5",
+                    my: "3rem",
                     maxW: "90%",
                     mx: "auto",
                 })}>
@@ -36,6 +37,7 @@ const Home = ({ pokemons: { data } }: HomeProps) => {
                         <PokemonCard key={d.name} {...d} />
                     ))}
                 </div>
+                <Paginate {...links} />
             </section>
         </>
     );
