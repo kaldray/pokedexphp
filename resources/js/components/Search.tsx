@@ -11,8 +11,8 @@ export const Search = () => {
             router.get(`/`, {}, { only: ["pokemons"], preserveState: true });
         } else {
             router.get(
-                `/search`,
-                { name: e.target.value },
+                `/search/${e.target.value}`,
+                {},
                 { preserveState: true, only: ["pokemons"] },
             );
         }

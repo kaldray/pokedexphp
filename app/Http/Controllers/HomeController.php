@@ -20,9 +20,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function show(Request $request)
+    public function show(string $name)
     {
-        $name = $request->query->get("name");
         $pokemonList = $this->pokemonService->searchPokemon($name);
         return Inertia::render("Home", [
             "pokemons" => $pokemonList,

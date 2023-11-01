@@ -15,4 +15,4 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get("/", [HomeController::class, "index"]);
-Route::get("/search", [HomeController::class, "show"]);
+Route::get("/search/{name}", [HomeController::class, "show"]);
